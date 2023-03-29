@@ -3,7 +3,7 @@ function App() {
 		<div className='wrapper'>
 			<header>
 				<div className='headerLeft'>
-					<img src='/img/logo.svg' width='60px' />
+					<img src='/img/logo.svg' width='60px' alt="logo"/>
 					<div>
 						<h3>Sneakers</h3>
 						<p>Store of the best sneakers</p>
@@ -11,16 +11,22 @@ function App() {
 				</div>
 				<ul className='headerRight'>
 					<li>
-						<img src='/img/cart.svg' width='34px' />
+						<img src='/img/cart.svg' width='34px' alt="cart"/>
 						<span>0$</span>
 					</li>
 					<li>
-						<img src='/img/user.svg' width='34px' />
+						<img src='/img/user.svg' width='34px' alt="user"/>
 					</li>
 				</ul>
 			</header>
 			<div className='content'>
-				<h1>All sneakers</h1>
+				<div className="sneakers-top">
+        <h1>All sneakers</h1>
+        <div className="search-block">
+        <img src='/img/search.svg' width='28px' height='34px' alt="search" />
+        <input placeholder="Search..."/>
+        </div>
+        </div>
         <div className="sneakers">
 				<div className='card'>
 					<img

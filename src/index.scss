@@ -116,6 +116,10 @@ table {
 	border-spacing: 0;
 }
 
+* {
+	font-family: 'Inter', sans-serif;
+}
+
 body {
 	margin: 0;
 	font-family: 'Inter', sans-serif;
@@ -141,7 +145,7 @@ header {
 		display: flex;
 		align-items: center;
 	}
-	
+
 	img {
 		margin-right: 10px;
 	}
@@ -208,11 +212,11 @@ header {
 	.cardPrice {
 		display: flex;
 		flex-direction: column;
-		span{
+		span {
 			font-size: 14px;
 			font-weight: 400;
 		}
-		b{
+		b {
 			font-weight: 600;
 			font-size: 18px;
 		}
@@ -231,5 +235,26 @@ header {
 			top: 0;
 			position: absolute;
 		}
+	}
+}
+
+.sneakers-top {
+	justify-content: space-between;
+	display: flex;
+	align-items: center;
+}
+
+.search-block {
+	background-color: white;
+	margin-top: 30px;
+	border-radius: 16px;
+	border: 1px solid white;
+	display: flex;
+	input {
+		border-radius: 16px;
+		border: 0;
+		outline: none;
+		font-size: 13px;
+		padding: 10px 0px;
 	}
 }
