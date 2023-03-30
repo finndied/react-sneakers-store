@@ -183,6 +183,7 @@ header {
 	flex-wrap: wrap;
 	gap: 50px;
 	justify-content: center;
+	place-items: flex-start;
 }
 
 .card {
@@ -192,6 +193,7 @@ header {
 	background-color: white;
 	border-radius: 40px;
 	color: black;
+	height: 440px;
 	padding: 20px;
 	transition: all 0.3s ease 0s;
 	&:hover {
@@ -209,7 +211,7 @@ header {
 		&:hover {
 		}
 	}
-
+	
 	.cardBottom {
 		display: flex;
 		justify-content: space-between;
