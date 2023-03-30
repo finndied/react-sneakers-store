@@ -1,0 +1,60 @@
+.card {
+	border: 1px solid white;
+	padding: 0px;
+	width: 300px;
+	background-color: white;
+	border-radius: 40px;
+	color: black;
+	height: 440px;
+	padding: 20px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		border-radius: 25px;
+		transform: scale(1.03);
+	}
+
+	h3 {
+		font-weight: 600;
+		font-size: 21px;
+	}
+
+	.cardSneakers {
+		padding: 30px 30px 0 10px;
+		&:hover {
+		}
+	}
+	
+	.cardBottom {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+	}
+
+	.cardPrice {
+		display: flex;
+		flex-direction: column;
+		span {
+			font-size: 14px;
+			font-weight: 400;
+		}
+		b {
+			font-weight: 600;
+			font-size: 18px;
+		}
+	}
+	.button {
+		position: relative;
+		background-color: white;
+		border-radius: 28px;
+		height: 32px;
+		width: 32px;
+		border: 1px solid black;
+		cursor: pointer;
+
+		img {
+			left: 0;
+			top: 0;
+			position: absolute;
+		}
+	}
+}
