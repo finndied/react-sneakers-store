@@ -139,7 +139,7 @@ header {
 	width: 100%;
 	justify-content: space-between;
 	align-items: center;
-	box-shadow: 0px 20px 14px 0px rgba(0, 0, 0, 0.07);
+	box-shadow: 0px 20px 14px 0px rgba(158, 41, 103, 0.07);
 	.headerLeft {
 		padding-left: 30px;
 		display: flex;
@@ -193,6 +193,11 @@ header {
 	border-radius: 40px;
 	color: black;
 	padding: 20px;
+	transition: all 0.3s ease 0s;
+	&:hover {
+		border-radius: 25px;
+		transform: scale(1.03);
+	}
 
 	h3 {
 		font-weight: 600;
@@ -201,6 +206,8 @@ header {
 
 	.cardSneakers {
 		padding: 30px 30px 0 10px;
+		&:hover {
+		}
 	}
 
 	.cardBottom {
@@ -256,5 +263,89 @@ header {
 		outline: none;
 		font-size: 13px;
 		padding: 10px 0px;
+	}
+}
+
+.drawer {
+	display: flex;
+	flex-direction: column;
+	position: fixed;
+	z-index: 3;
+	right: 0;
+	width: 385px;
+	height: 100vh;
+	background-color: #ffffff;
+	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
+	padding-top: 60px;
+
+	.items {
+		flex: 1;
+		overflow: hidden;
+		overflow-y: scroll;
+	}
+	.cartItem {
+		border: 1px solid black;
+		border-radius: 25px;
+		margin: 30px 20px;
+		padding: 0 30px;
+		display: flex;
+		align-items: center;
+		p {
+			margin: 5px 13px 5px 15px;
+			font-weight: 600;
+		}
+		.removeBtn {
+			// position: absolute;
+			// right: 0;
+			margin-right: -25px;
+			transform: rotateZ(133deg);
+			cursor: pointer;
+			&:hover {
+				transition: all 0.3s ease 0s;
+				transform: rotateZ(42deg);
+			}
+		}
+	}
+}
+
+.totalBlock {
+	z-index: 1;
+	background-color: #ffffff;
+	height: 250px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	.priceCount {
+		display: flex;
+		padding: 0px 20px;
+		margin-bottom: 40px;
+		span {
+			font-weight: 600;
+		}
+		b {
+			font-weight: 400;
+		}
+		div {
+			margin: 0px 5px;
+			width: 250px;
+			opacity: 0.6;
+			border-bottom: 1px dashed gray;
+		}
+	}
+	.checkBtn {
+		cursor: pointer;
+		background-color: black;
+		margin-bottom: 13vh;
+		color: white;
+		width: 80%;
+		height: 50px;
+		border-radius: 20px;
+		font-size: 20px;
+		transition: all 0.3s ease 0s;
+		&:hover {
+			color: black;
+			background-color: white;
+		}
 	}
 }
