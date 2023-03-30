@@ -318,8 +318,8 @@ header {
 	justify-content: center;
 	.priceCount {
 		display: flex;
+		margin-bottom: 45px;
 		padding: 0px 20px;
-		margin-bottom: 40px;
 		span {
 			font-weight: 600;
 		}
@@ -336,7 +336,7 @@ header {
 	.checkBtn {
 		cursor: pointer;
 		background-color: black;
-		margin-bottom: 13vh;
+		margin-bottom: 10vh;
 		color: white;
 		width: 80%;
 		height: 50px;
