@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Header = () => {
+const Header = props => {
 	return (
 		<header>
 			<div className='headerLeft'>
@@ -12,7 +12,12 @@ const Header = () => {
 			</div>
 			<ul className='headerRight'>
 				<li>
-					<img src='/img/cart.svg' width='34px' alt='cart' />
+					<img
+						src='/img/cart.svg'
+						width='34px'
+						alt='cart'
+						onClick={() => props.cartOpened ? props.onCloseCart() : props.onClickCart()} 
+					/>
 					<span>0$</span>
 				</li>
 				<li>

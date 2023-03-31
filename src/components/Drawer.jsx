@@ -2,7 +2,7 @@ import React from 'react'
 
 const Drawer = () => {
 	return (
-		<div style={{ display: 'none' }} className='drawer'>
+		<div className='drawer'>
 			<div className='items'>
 				<div className='cartItem'>
 					<img

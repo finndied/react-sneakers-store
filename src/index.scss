@@ -209,12 +209,13 @@ header {
 	}
 }
 
+
 .drawer {
 	display: flex;
 	flex-direction: column;
 	position: fixed;
 	z-index: 3;
-	right: 0;
+	right: 0px;
 	width: 385px;
 	height: 100vh;
 	background-color: #ffffff;

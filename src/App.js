@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import Card from './components/Card/Card'
 import Drawer from './components/Drawer'
 import Header from './components/Header'
@@ -46,10 +47,16 @@ const arr = [
 ]
 
 function App() {
+	const [cartOpened, setCartOpened] = useState(false)
+
 	return (
 		<div className='wrapper'>
-			<Drawer />
-			<Header />
+			{cartOpened && <Drawer/>}
+			<Header
+				onClickCart={() => setCartOpened(true)}
+				onCloseCart={() => setCartOpened(false)}
+				cartOpened={cartOpened} 
+			/>
 			<div className='content'>
 				<div className='sneakers-top'>
 					<h1>All sneakers</h1>
@@ -70,6 +77,7 @@ function App() {
 								title={obj.title}
 								price={obj.price}
 								imageUrl={obj.imageUrl}
+								onPlus={() => console.log('alert')}
 							/>
 						</div>
 					))}
