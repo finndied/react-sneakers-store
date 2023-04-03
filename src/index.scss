@@ -173,6 +173,9 @@ header {
 	padding: 30px;
 	color: white;
 	h1 {
+		width: 450px;
+		text-overflow: ellipsis;
+		overflow: hidden;
 		margin-top: 60px;
 		padding-bottom: 10px;
 	}
@@ -195,17 +198,18 @@ header {
 }
 
 .search-block {
-	background-color: white;
+	width: 150px;
 	margin-top: 30px;
-	border-radius: 16px;
-	border: 1px solid white;
+	border-radius: 4px;
 	display: flex;
+	border-bottom: 1px solid white;
 	input {
-		border-radius: 16px;
+		width: 90px;
+		color: white;
 		border: 0;
+		background-color: transparent;
 		outline: none;
 		font-size: 13px;
-		padding: 10px 0px;
 	}
 }
 
@@ -239,9 +243,7 @@ header {
 			font-weight: 600;
 		}
 		.removeBtn {
-			// position: absolute;
-			// right: 0;
-			margin-right: -25px;
+			margin-right: -15px;
 			transform: rotateZ(133deg);
 			cursor: pointer;
 			&:hover {

@@ -1,43 +1,25 @@
 import React from 'react'
 
-const Drawer = () => {
+const Drawer = ({ onRemoveItem, items = [] }) => {
 	return (
 		<div className='drawer'>
 			<div className='items'>
-				<div className='cartItem'>
-					<img
-						src='/img/sneakers/Nike/1-front.webp'
-						width='100px'
-						alt='Sneakers'
-					/>
-					<div>
-						<p>Nike M2K Tekno</p>
-						<p>300$</p>
+				{items.map(obj => (
+					<div className='cartItem' key={obj.title}>
+						<img src={obj.imageUrl} width='100px' alt='Sneakers' />
+						<div>
+							<p>{obj.title}</p>
+							<p>{obj.price}</p>
+						</div>
+						<img
+							onClick={() => onRemoveItem(obj.id)}
+							className='removeBtn'
+							src='/img/plus.svg'
+							width='30px'
+							alt='remove'
+						/>
 					</div>
-					<img
-						className='removeBtn'
-						src='/img/plus.svg'
-						width='30px'
-						alt='remove'
-					/>
-				</div>
-				<div className='cartItem'>
-					<img
-						src='/img/sneakers/Nike/1-front.webp'
-						width='100px'
-						alt='Sneakers'
-					/>
-					<div>
-						<p>Nike M2K Tekno</p>
-						<p>300$</p>
-					</div>
-					<img
-						className='removeBtn'
-						src='/img/plus.svg'
-						width='30px'
-						alt='remove'
-					/>
-				</div>
+				))}
 			</div>
 			<div className='totalBlock'>
 				<ul>

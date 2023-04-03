@@ -2,24 +2,43 @@ import { useEffect, useState } from 'react'
 import Card from './components/Card/Card'
 import Drawer from './components/Drawer'
 import Header from './components/Header'
+import axios from 'axios'
 
 function App() {
-	const [cartOpened, setCartOpened] = useState(false)
 	const [sneakers, setSneakers] = useState([])
+	const [cartItems, setCartItems] = useState([])
+	const [searchValue, setSearchValue] = useState('')
+	const [cartOpened, setCartOpened] = useState(false)
 
 	useEffect(() => {
-		fetch('https://64265fc6d24d7e0de46ed272.mockapi.io/Sneakers')
+		axios
+			.get('https://64265fc6d24d7e0de46ed272.mockapi.io/Sneakers')
 			.then(res => {
-				return res.json()
+				setSneakers(res.data)
 			})
-			.then(json => {
-				setSneakers(json)
-			})
+		axios.get('https://64265fc6d24d7e0de46ed272.mockapi.io/Cart').then(res => {
+			setCartItems(res.data)
+		})
 	}, [])
+
+	const onRemoveItem = id => {
+		axios.delete(`https://64265fc6d24d7e0de46ed272.mockapi.io/Cart/${id}`)
+		setCartItems(prev => prev.filter(item => item.id !== id))
+	}
+
+	const onAddToCart = obj => {
+		axios
+			.post('https://64265fc6d24d7e0de46ed272.mockapi.io/Cart', obj)
+			.then(res => setCartItems(prev => [...prev, res.data]))
+	}
+
+	const onChangeSearchInput = event => {
+		setSearchValue(event.target.value)
+	}
 
 	return (
 		<div className='wrapper'>
-			{cartOpened && <Drawer />}
+			{cartOpened && <Drawer items={cartItems} onRemoveItem={onRemoveItem} />}
 			<Header
 				onClickCart={() => setCartOpened(true)}
 				onCloseCart={() => setCartOpened(false)}
@@ -27,7 +46,11 @@ function App() {
 			/>
 			<div className='content'>
 				<div className='sneakers-top'>
-					<h1>All sneakers</h1>
+					<h1>
+						{searchValue
+							? `Search by request: "${searchValue}"`
+							: 'All sneakers'}
+					</h1>
 					<div className='search-block'>
 						<img
 							src='/img/search.svg'
@@ -35,20 +58,29 @@ function App() {
 							height='34px'
 							alt='search'
 						/>
-						<input placeholder='Search...' />
+						<input
+							placeholder='Search...'
+							value={searchValue}
+							onChange={onChangeSearchInput}
+						/>
 					</div>
 				</div>
 				<div className='sneakers'>
-					{sneakers.map(obj => (
-						<div style={{ display: 'flex' }}>
-							<Card
-								title={obj.title}
-								price={obj.price}
-								imageUrl={obj.imageUrl}
-								onPlus={() => console.log('alert')}
-							/>
-						</div>
-					))}
+					{sneakers
+						.filter(item =>
+							item.title.toLowerCase().includes(searchValue.toLowerCase())
+						)
+						.map(item => (
+							<div style={{ display: 'flex' }}>
+								<Card
+									key={item.title}
+									title={item.title}
+									price={item.price}
+									imageUrl={item.imageUrl}
+									onPlus={obj => onAddToCart(obj)}
+								/>
+							</div>
+						))}
 				</div>
 			</div>
 		</div>
