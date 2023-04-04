@@ -5,7 +5,7 @@ const Drawer = ({ onRemoveItem, items = [] }) => {
 		<div className='drawer'>
 			<div className='items'>
 				{items.map(obj => (
-					<div className='cartItem' key={obj.title}>
+					<div key={obj.id} className='cartItem'> 
 						<img src={obj.imageUrl} width='100px' alt='Sneakers' />
 						<div>
 							<p>{obj.title}</p>

@@ -23,7 +23,7 @@
 		&:hover {
 		}
 	}
-	
+
 	.cardBottom {
 		display: flex;
 		justify-content: space-between;
@@ -50,7 +50,15 @@
 		width: 32px;
 		border: 1px solid black;
 		cursor: pointer;
-
+		transition: all 0.07s ease 0s;
+		&:hover {
+			background-color: rgb(233, 233, 233);
+		}
+		&:active {
+			background-color: #5d5c5c;
+			box-shadow: 0 5px rgb(233, 233, 233);
+			transform: translateY(4px);
+		}
 		img {
 			left: 0;
 			top: 0;

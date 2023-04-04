@@ -1,13 +1,9 @@
 import React, { useState } from 'react'
 import styles from './Card.module.scss'
 
-const Card = ({title, price, imageUrl, onPlus}) => {
-
-	const [isChecked, setIsChecked] = useState(false)
-
+const Card = ({ id, title, price, imageUrl, onPlus }) => {
 	const handleOnClick = () => {
-		onPlus({title, price, imageUrl})
-		setIsChecked(!isChecked)
+		onPlus({ id, title, price, imageUrl })
 	}
 
 	return (
@@ -25,7 +21,7 @@ const Card = ({title, price, imageUrl, onPlus}) => {
 					<b>{price}</b>
 				</div>
 				<button className={styles.button} onClick={handleOnClick}>
-					<img src={isChecked ? '/img/check.svg' : '/img/plus.svg'} width='30px' />
+					<img src='/img/plus.svg' width='30px' />
 				</button>
 			</div>
 		</div>
