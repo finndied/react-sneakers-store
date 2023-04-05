@@ -63,7 +63,7 @@ function App() {
 					</h1>
 					<div className='search-block'>
 						<img
-							src='/img/search.svg'
+							src='img/search.svg'
 							width='28px'
 							height='34px'
 							alt='search'

@@ -166,6 +166,12 @@ header {
 	}
 }
 
+@media (max-width: 768px) {
+	.headerLeft {
+		font-size: 12px;
+	}
+}
+
 .content {
 	padding: 30px;
 	color: white;
@@ -185,8 +191,6 @@ header {
 	justify-content: center;
 	place-items: flex-start;
 }
-
-
 
 .sneakers-top {
 	justify-content: space-between;
@@ -209,8 +213,3 @@ header {
 		font-size: 13px;
 	}
 }
-
-
-
-
-

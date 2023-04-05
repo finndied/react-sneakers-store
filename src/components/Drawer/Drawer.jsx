@@ -23,7 +23,7 @@ const Drawer = ({ total, onRemoveItem, items = [], opened }) => {
 									<img
 										onClick={() => onRemoveItem(obj.id)}
 										className={styles.removeBtn}
-										src='/img/plus.svg'
+										src='img/plus.svg'
 										width='30px'
 										alt='remove'
 									/>

@@ -21,7 +21,7 @@ const Card = ({ id, title, price, imageUrl, onPlus }) => {
 					<b>{price}</b>
 				</div>
 				<button className={styles.button} onClick={handleOnClick}>
-					<img src='/img/plus.svg' width='30px' />
+					<img src='img/plus.svg' width='30px' fill="#000000" />
 				</button>
 			</div>
 		</div>

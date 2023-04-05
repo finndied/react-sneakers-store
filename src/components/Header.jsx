@@ -4,7 +4,7 @@ const Header = props => {
 	return (
 		<header>
 			<div className='headerLeft'>
-				<img src='/img/logo.svg' width='60px' alt='logo' />
+				<img src='img/logo.svg' width='60px' alt='logo' />
 				<div>
 					<h3>Sneakers</h3>
 					<p>Store of the best sneakers</p>
@@ -13,7 +13,7 @@ const Header = props => {
 			<ul className='headerRight'>
 				<li>
 					<img
-						src='/img/cart.svg'
+						src='img/cart.svg'
 						width='34px'
 						alt='cart'
 						onClick={() =>
@@ -23,7 +23,7 @@ const Header = props => {
 					<span>{props.total}$</span>
 				</li>
 				<li>
-					<img src='/img/user.svg' width='34px' alt='user' />
+					<img src='img/user.svg' width='34px' alt='user' />
 				</li>
 			</ul>
 		</header>
