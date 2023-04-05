@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import Card from './components/Card/Card'
-import Drawer from './components/Drawer'
+import Drawer from './components/Drawer/Drawer'
 import Header from './components/Header'
 import axios from 'axios'
 
@@ -42,9 +42,12 @@ function App() {
 
 	return (
 		<div className='wrapper'>
-			{cartOpened && (
-				<Drawer items={cartItems} onRemoveItem={onRemoveItem} total={total} />
-			)}
+			<Drawer
+				items={cartItems}
+				onRemoveItem={onRemoveItem}
+				total={total}
+				opened={cartOpened}
+			/>
 			<Header
 				onClickCart={() => setCartOpened(true)}
 				onCloseCart={() => setCartOpened(false)}

@@ -128,9 +128,6 @@ body {
 	background-color: black;
 }
 
-.wrapper {
-}
-
 header {
 	background-color: white;
 	position: fixed;
@@ -214,83 +211,6 @@ header {
 }
 
 
-.drawer {
-	display: flex;
-	flex-direction: column;
-	position: fixed;
-	z-index: 3;
-	right: 0px;
-	width: 385px;
-	height: 100vh;
-	background-color: #ffffff;
-	box-shadow: -10px 4px 24px rgba(0, 0, 0, 0.01);
-	padding-top: 60px;
 
-	.items {
-		flex: 1;
-		overflow: hidden;
-		overflow-y: scroll;
-	}
-	.cartItem {
-		border: 1px solid black;
-		border-radius: 25px;
-		margin: 30px 20px;
-		padding: 0 30px;
-		display: flex;
-		align-items: center;
-		p {
-			margin: 5px 13px 5px 15px;
-			font-weight: 600;
-		}
-		.removeBtn {
-			transform: rotateZ(133deg);
-			cursor: pointer;
-			&:hover {
-				transition: all 0.3s ease 0s;
-				transform: rotateZ(42deg);
-			}
-		}
-	}
-}
 
-.totalBlock {
-	z-index: 1;
-	background-color: #ffffff;
-	height: 250px;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	.priceCount {
-		display: flex;
-		margin-bottom: 45px;
-		padding: 0px 20px;
-		span {
-			font-weight: 600;
-		}
-		b {
-			font-weight: 400;
-		}
-		div {
-			margin: 0px 5px;
-			width: 250px;
-			opacity: 0.6;
-			border-bottom: 1px dashed gray;
-		}
-	}
-	.checkBtn {
-		cursor: pointer;
-		background-color: black;
-		margin-bottom: 10vh;
-		color: white;
-		width: 80%;
-		height: 50px;
-		border-radius: 20px;
-		font-size: 20px;
-		transition: all 0.3s ease 0s;
-		&:hover {
-			color: black;
-			background-color: white;
-		}
-	}
-}
+
