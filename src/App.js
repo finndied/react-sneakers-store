@@ -36,13 +36,20 @@ function App() {
 		setSearchValue(event.target.value)
 	}
 
+	const total = cartItems.reduce((acc, item) => {
+		return acc + parseFloat(item.price)
+	}, 0)
+
 	return (
 		<div className='wrapper'>
-			{cartOpened && <Drawer items={cartItems} onRemoveItem={onRemoveItem} />}
+			{cartOpened && (
+				<Drawer items={cartItems} onRemoveItem={onRemoveItem} total={total} />
+			)}
 			<Header
 				onClickCart={() => setCartOpened(true)}
 				onCloseCart={() => setCartOpened(false)}
 				cartOpened={cartOpened}
+				total={total}
 			/>
 			<div className='content'>
 				<div className='sneakers-top'>

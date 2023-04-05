@@ -16,9 +16,11 @@ const Header = props => {
 						src='/img/cart.svg'
 						width='34px'
 						alt='cart'
-						onClick={() => props.cartOpened ? props.onCloseCart() : props.onClickCart()} 
+						onClick={() =>
+							props.cartOpened ? props.onCloseCart() : props.onClickCart()
+						}
 					/>
-					<span>0$</span>
+					<span>{props.total}$</span>
 				</li>
 				<li>
 					<img src='/img/user.svg' width='34px' alt='user' />

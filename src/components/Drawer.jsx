@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Drawer = ({ onRemoveItem, items = [] }) => {
+const Drawer = ({ total, onRemoveItem, items = [] }) => {
 	return (
 		<div className='drawer'>
 			<div className='items'>
@@ -26,7 +26,7 @@ const Drawer = ({ onRemoveItem, items = [] }) => {
 					<li className='priceCount'>
 						<span>Total:</span>
 						<div></div>
-						<b>600$</b>
+						<b>{total}$</b>
 					</li>
 				</ul>
 				<button className='checkBtn'>Checkout</button>
