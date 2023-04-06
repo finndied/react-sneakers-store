@@ -3,6 +3,9 @@ import Card from './components/Card/Card'
 import Drawer from './components/Drawer/Drawer'
 import Header from './components/Header'
 import axios from 'axios'
+import Slider from './components/Slider/Slider'
+
+const images = ['img/slider-1.webp', 'img/slider-3.webp', 'img/slider-2.webp']
 
 function App() {
 	const [sneakers, setSneakers] = useState([])
@@ -55,6 +58,7 @@ function App() {
 				total={total}
 			/>
 			<div className='content'>
+				<Slider images={images} />
 				<div className='sneakers-top'>
 					<h1>
 						{searchValue
@@ -62,12 +66,7 @@ function App() {
 							: 'All sneakers'}
 					</h1>
 					<div className='search-block'>
-						<img
-							src='img/search.svg'
-							width='28px'
-							height='34px'
-							alt='search'
-						/>
+						<img src='img/search.svg' width='28px' height='34px' alt='search' />
 						<input
 							placeholder='Search...'
 							value={searchValue}
@@ -75,6 +74,7 @@ function App() {
 						/>
 					</div>
 				</div>
+				<img src='img/backImg.png' alt='' className='backImg' />
 				<div className='sneakers'>
 					{sneakers
 						.filter(item =>
