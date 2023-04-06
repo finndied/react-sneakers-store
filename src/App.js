@@ -4,6 +4,7 @@ import Drawer from './components/Drawer/Drawer'
 import Header from './components/Header'
 import axios from 'axios'
 import Slider from './components/Slider/Slider'
+import Footer from './components/Footer/Footer'
 
 const images = ['img/slider-1.webp', 'img/slider-3.webp', 'img/slider-2.webp']
 
@@ -93,6 +94,7 @@ function App() {
 						))}
 				</div>
 			</div>
+			<Footer/>
 		</div>
 	)
 }
