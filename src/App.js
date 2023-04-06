@@ -51,6 +51,7 @@ function App() {
 				onRemoveItem={onRemoveItem}
 				total={total}
 				opened={cartOpened}
+				setCartOpened={setCartOpened}
 			/>
 			<Header
 				onClickCart={() => setCartOpened(true)}

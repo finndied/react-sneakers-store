@@ -1,9 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import styles from './Drawer.module.scss'
 
-const Drawer = ({ total, onRemoveItem, items = [], opened }) => {
+const Drawer = ({ total, onRemoveItem, items = [], opened, setCartOpened }) => {
+	const [startTouchX, setStartTouchX] = useState(null)
+	const [endTouchX, setEndTouchX] = useState(null)
+
+	function handleTouchStart(event) {
+		setStartTouchX(event.touches[0].clientX)
+	}
+
+	function handleTouchEnd(event) {
+		setEndTouchX(event.changedTouches[0].clientX)
+		if (endTouchX - startTouchX > 150) {
+			setCartOpened(false)
+		}
+	}
 	return (
-		<div className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}>
+		<div
+			className={`${styles.overlay} ${opened ? styles.overlayVisible : ''}`}
+			onTouchStart={handleTouchStart}
+			onTouchEnd={handleTouchEnd}
+		>
 			<div className={styles.drawer}>
 				{items.length === 0 ? (
 					<div className={styles.emptyCart}>
