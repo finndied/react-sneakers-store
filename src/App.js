@@ -75,7 +75,6 @@ function App() {
 						/>
 					</div>
 				</div>
-				<img src='img/backImg.png' alt='' className='backImg' />
 				<div className='sneakers'>
 					{sneakers
 						.filter(item =>
